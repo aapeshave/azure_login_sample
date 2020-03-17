@@ -65,7 +65,7 @@ public class TodolistController {
     /**
      * HTTP PUT
      */
-    @PreAuthorize("hasRole('ROLE_group1')")
+    @PreAuthorize("hasAnyRole('ROLE_group1', 'ROLE_uttu_group')")
     @RequestMapping(value = "/api/todolist", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateTodoItem(@RequestBody TodoItem item) {
         final List<TodoItem> find =
